@@ -1,4 +1,4 @@
-from zakar import *
+from test_script import *
 import pytest
 
 @pytest.fixture(scope='module')
