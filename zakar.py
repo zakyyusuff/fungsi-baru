@@ -9,7 +9,7 @@ def text():
 
     return {
         'data': data,
-        'pred': pred,
+        'pred': pred
     }
 
 def test_pred(text):
