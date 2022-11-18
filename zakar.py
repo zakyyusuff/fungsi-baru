@@ -1,6 +1,3 @@
-from test_script import *
-import pytest
-
 @pytest.fixture(scope='module')
 def text():
     data = ['hallo selamat pagi', 'silahkan transfer ke nomor rekening', 'selamat anda berhasil memnangkan']
