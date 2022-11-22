@@ -1,19 +1,14 @@
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from sklearn.feature_extraction.text import TfidfVectorizer
-from zakar import *
+from zakar import*
 
-def test_pred(text):
-    stemmer = StemmerFactory().create_stemmer()
-    vectorizer = TfidfVectorizer(max_features=1000, decode_error='ignore')
-    vectorizer.fit(text, stemmer)
+def test_fetch():
+    df = fetch_spambase()
+    assert((4601, 58) == df.values.shape)
 
-    if text == 0:
-        pred = 'Normal'
-        status = 'text-success'
-    elif text == 1:
-        pred = 'Penipuan'
-        status = 'text-danger'
-    else:
-        pred = 'Promo'
-        status = 'text-warning'
-    assert pred, status
+
+def test_basemodel():
+    df = fetch_spambase()
+    p = create_pipeline_spambase()
+    X = df.iloc[:, :-1].values
+    y = df.iloc[:, -1:].values.astype('int').ravel() 
+    scores = cross_val_score(p, X, y, cv=10)   
+    print(scores)
