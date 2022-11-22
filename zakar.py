@@ -1,5 +1,5 @@
 from functools import partial
-from fungsi1_class import StopWordRemovalTransformer, LemmatizeTransformer, DocEmbeddingVectorizer
+from class_fungsi import StopWordRemovalTransformer, LemmatizeTransformer, DocEmbeddingVectorizer
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 import numpy as np
 from urllib.request import urlopen, urlretrieve
