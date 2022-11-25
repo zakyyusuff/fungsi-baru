@@ -1,5 +1,10 @@
 from zakar import*
 
+def test_file_get():
+    df = fetch_URLSpam()
+    r = df['text'].values
+    assert fetch_URLSpam(r)
+
 def test_coba():
     data = ['spam']
     label = ['Klicke geheim Link']
