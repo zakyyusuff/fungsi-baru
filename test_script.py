@@ -1,6 +1,6 @@
 from zakar import*
 
-def test_coba():
+def test_check_for_pred():
     data = ['spam']
     label = ['Klicke geheim Link']
     pred = (data, label)
