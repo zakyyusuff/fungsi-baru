@@ -1,15 +1,15 @@
 from zakar import*
 
-def test_check_for_pred():
-    data = ['spam']
-    label = ['Klicke geheim Link']
-    pred = (data, label)
-    assert iText(pred)
-    
 def test_fetch():
     df = fetch_spambase()
     assert((4601, 58) == df.values.shape)
 
+def test_coba():
+    label = "spam"
+    text = "AngeBot ist, geheim!"
+    data_frame = text, label  
+    # data_frame = pd.DataFrame(pred)
+    assert iText(text, data_frame)
 
 def test_basemodel():
     df = fetch_spambase()
