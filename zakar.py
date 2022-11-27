@@ -15,12 +15,14 @@ import string
 
 SYMBOLS = " ".join(string.punctuation).split(" ") + ["-", "...", "”", "”"]
 
-def iText(text):
-    label = {'label': ['spam', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham', 'ham']} 
-    data = {'text': ['AngeBot ist, geheim!', 'Klicke geheim Link', 'Geheim, sport link', 'Spiel SPORT heute?', 'geh spiel sport', 'GEHEIM sport Veranstaltung', 'sport ist heute', 'sport kostet Geld!']} 
-    pred = data, label              
-    data_frame = pd.DataFrame(pred)
+def iText(text, data_frame):
+    label = ['spam', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham', 'ham']
+    text = ['AngeBot ist, geheim!', 'Klicke geheim Link', 'Geheim, sport link', 'Spiel SPORT heute?', 'geh spiel sport', 'GEHEIM sport Veranstaltung', 'sport ist heute', 'sport kostet Geld!']
+    text[-1].strip()
+    label[-1].strip()            
+    data_frame = pd.DataFrame(text, label)
     return text, data_frame
+
 
 def fetch_URLSpam(data_home='data'):
     URL_LINGSPAM = 'http://nlp.cs.aueb.gr/software_and_datasets/lingspam_public.tar.gz'
