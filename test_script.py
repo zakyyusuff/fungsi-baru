@@ -7,9 +7,7 @@ def test_fetch():
 def test_check():
     label = "spam"
     text = "AngeBot ist, geheim!"
-    data_frame = text, label  
-    # data_frame = pd.DataFrame(pred)
-    assert iText(text, data_frame)
+    assert iText(text, label)
 
 def test_basemodel():
     df = fetch_spambase()
