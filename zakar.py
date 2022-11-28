@@ -16,8 +16,6 @@ import string
 SYMBOLS = " ".join(string.punctuation).split(" ") + ["-", "...", "”", "”"]
 
 def iText(text, data_frame):
-    label = ['spam', 'spam', 'spam', 'ham', 'ham', 'ham', 'ham', 'ham']
-    text = ['AngeBot ist, geheim!', 'Klicke geheim Link', 'Geheim, sport link', 'Spiel SPORT heute?', 'geh spiel sport', 'GEHEIM sport Veranstaltung', 'sport ist heute', 'sport kostet Geld!']
     text[-1].strip()
     label[-1].strip()            
     data_frame = pd.DataFrame(text, label)
