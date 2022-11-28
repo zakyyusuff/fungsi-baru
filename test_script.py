@@ -4,7 +4,7 @@ def test_fetch():
     df = fetch_spambase()
     assert((4601, 58) == df.values.shape)
 
-def test_coba():
+def test_check():
     label = "spam"
     text = "AngeBot ist, geheim!"
     data_frame = text, label  
