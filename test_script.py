@@ -1,12 +1,12 @@
 from zakar import*
 
-def test_fetch():
-    df = fetch_spambase()
-    assert((4601, 58) == df.values.shape)
-
 def test_app(file=__file__):
     data = iText(file)
     assert data
+
+def test_fetch():
+    df = fetch_spambase()
+    assert((4601, 58) == df.values.shape)
 
 def test_basemodel():
     df = fetch_spambase()
