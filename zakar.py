@@ -15,11 +15,12 @@ import string
 
 SYMBOLS = " ".join(string.punctuation).split(" ") + ["-", "...", "”", "”"]
 
-def iText(text, data_frame):
-    text[-1].strip()
-    label[-1].strip()            
-    data_frame = pd.DataFrame(text, label)
-    return text, data_frame
+def iText(file):
+    text = file[-1].strip()    
+    label = file[-1].strip()                  
+    data_frame = (text, label)
+
+    return data_frame
 
 
 def fetch_URLSpam(data_home='data'):
