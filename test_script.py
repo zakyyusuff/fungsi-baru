@@ -4,10 +4,9 @@ def test_fetch():
     df = fetch_spambase()
     assert((4601, 58) == df.values.shape)
 
-def test_check():
-    label = "spam"
-    text = "AngeBot ist, geheim!"
-    assert iText(text, label)
+def test_app(file=__file__):
+    data = iText(file)
+    assert data
 
 def test_basemodel():
     df = fetch_spambase()
